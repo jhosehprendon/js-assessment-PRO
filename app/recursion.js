@@ -39,12 +39,16 @@ recursionAnswers = {
    * @returns {Number} The nth fibonacci number
    */
   fibonacci: function fibonacci(n) {
-    var bucket = [1]
-    var sum = 0
-    for (var i = 1; i < n ; i++) {
-      bucket.push(bucket[i - 1] + sum)
-      sum = bucket[i - 1]
+    // var bucket = [1]
+    // var sum = 0
+    // for (var i = 1; i < n ; i++) {
+    //   bucket.push(bucket[i - 1] + sum)
+    //   sum = bucket[i - 1]
+    // }
+    // return bucket[n-1]
+    if (n < 2){
+      return n
     }
-    return bucket[n-1]
+    return fibonacci(n - 1) + fibonacci(n - 2)
   },
 };
